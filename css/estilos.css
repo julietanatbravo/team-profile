@@ -1,0 +1,645 @@
+/* =========================================================
+   Equipo — hoja de estilos única
+   Mobile first + breakpoints en 400px, 900px y 1200px
+   ========================================================= */
+
+/* ---------- Reset mínimo ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+figure {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------- Variables ---------- */
+:root {
+  /* Tipografías de Google Fonts (se cargan desde el <head> de cada HTML).
+     Si la fuente no llega a cargar, cae en las del sistema. */
+  --fuente-titulos: "Outfit", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --fuente-texto: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+
+  --color-fondo: #f4f6f9;
+  --color-superficie: #ffffff;
+  --color-texto: #1f2933;
+  --color-suave: #5b6672;
+  --color-acento: #2f6f6b;
+  --color-acento-claro: #e3f0ee;
+  --color-borde: #dfe4ea;
+
+  --radio: 14px;
+  --sombra: 0 2px 10px rgba(31, 41, 51, 0.08);
+  --ancho-maximo: 1100px;
+  --gutter: 16px;
+}
+
+/* ---------- Base ---------- */
+body {
+  font-family: var(--fuente-texto);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
+  /* Evita desbordes horizontales con palabras largas o URLs */
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+a {
+  color: var(--color-acento);
+}
+
+/* Títulos y textos destacados usan la tipografía de display */
+h1,
+h2,
+h3,
+.encabezado__equipo,
+.perfil__nombre,
+.integrante__nombre,
+.entrada__titulo,
+.boton {
+  font-family: var(--fuente-titulos);
+}
+
+/* ---------- Contenedor ---------- */
+.contenedor {
+  width: 100%;
+  max-width: var(--ancho-maximo);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* ---------- Encabezado ---------- */
+.encabezado {
+  background-color: var(--color-acento);
+  color: #ffffff;
+  padding-block: 32px 36px;
+}
+
+.encabezado__equipo {
+  font-size: clamp(1.6rem, 6vw, 2.6rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.encabezado__descripcion {
+  margin-top: 16px;
+  max-width: 60ch;
+  color: #eaf4f2;
+}
+
+/* ---------- Botones / enlaces destacados ---------- */
+.boton {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 11px 20px;
+  border-radius: 999px;
+  background-color: #ffffff;
+  color: var(--color-acento);
+  font-weight: 600;
+  text-decoration: none;
+  /* No deja que el botón empuje el ancho de la página */
+  max-width: 100%;
+}
+
+.boton:hover,
+.boton:focus {
+  background-color: var(--color-acento-claro);
+}
+
+.boton--secundario {
+  background-color: transparent;
+  border: 1px solid var(--color-borde);
+  color: var(--color-acento);
+}
+
+.boton--secundario:hover,
+.boton--secundario:focus {
+  background-color: var(--color-acento-claro);
+}
+
+/* ---------- Secciones ---------- */
+.seccion {
+  padding-block: 32px;
+}
+
+.seccion__titulo {
+  font-size: clamp(1.25rem, 4.5vw, 1.7rem);
+  margin-bottom: 4px;
+}
+
+.seccion__bajada {
+  color: var(--color-suave);
+  margin-bottom: 20px;
+  max-width: 60ch;
+}
+
+/* ---------- Grilla de integrantes ---------- */
+.integrantes {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.integrante {
+  /* Clave para que el contenido no desborde la celda de la grilla */
+  min-width: 0;
+}
+
+.integrante__enlace {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  padding: 14px;
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.integrante__enlace:hover,
+.integrante__enlace:focus {
+  border-color: var(--color-acento);
+  transform: translateY(-2px);
+}
+
+.integrante__avatar {
+  flex: 0 0 auto;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--color-acento-claro);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23e3f0ee'/%3E%3Ccircle cx='100' cy='78' r='32' fill='%23a9c6c2'/%3E%3Cpath d='M36 188c0-35 29-56 64-56s64 21 64 56z' fill='%23a9c6c2'/%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Foto real de cada integrante en el listado del inicio.
+   Para los demás, agregá un modificador igual con su imagen. */
+.integrante__avatar--juli {
+  background-image: url("../imgs/Juli.jpg");
+}
+
+.integrante__datos {
+  min-width: 0;
+}
+
+.integrante__nombre {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/* ---------- Tarjeta de perfil ---------- */
+.perfil {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 20px;
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+}
+
+.perfil__foto {
+  width: 100%;
+  max-width: 260px;
+  margin-inline: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--radio);
+  background-color: var(--color-acento-claro);
+}
+
+/* Columna izquierda: foto + pokébola */
+.perfil__columna {
+  min-width: 0;
+}
+
+.perfil__info {
+  min-width: 0;
+}
+
+/* ---------- Pokébola (PokéAPI) ---------- */
+.pokemon {
+  min-width: 0;
+  margin-top: 18px;
+  text-align: center;
+}
+
+.pokemon__intro {
+  font-size: 0.85rem;
+  color: var(--color-suave);
+}
+
+/* La pokébola está dibujada con CSS: no usa ninguna imagen */
+.pokebola {
+  display: block;
+  width: 72px;
+  height: 72px;
+  margin: 10px auto 0;
+  padding: 0;
+  border: 3px solid var(--color-texto);
+  border-radius: 50%;
+  background-image: linear-gradient(
+    to bottom,
+    #e63946 0 calc(50% - 3px),
+    var(--color-texto) calc(50% - 3px) calc(50% + 3px),
+    #ffffff calc(50% + 3px) 100%
+  );
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.15s ease;
+}
+
+.pokebola::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin: -12px 0 0 -12px;
+  background-color: #ffffff;
+  border: 3px solid var(--color-texto);
+  border-radius: 50%;
+}
+
+.pokebola:hover,
+.pokebola:focus-visible {
+  transform: scale(1.08);
+}
+
+.pokebola:active {
+  transform: scale(0.95);
+}
+
+.pokebola--cargando {
+  animation: temblar 0.5s ease-in-out infinite;
+}
+
+@keyframes temblar {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-12deg); }
+  75% { transform: rotate(12deg); }
+}
+
+/* Si la persona pidió menos animaciones, no la hacemos temblar */
+@media (prefers-reduced-motion: reduce) {
+  .pokebola,
+  .pokebola--cargando,
+  .pokemon__tarjeta--aparece {
+    animation: none;
+    transition: none;
+  }
+}
+
+.pokemon__estado {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: var(--color-suave);
+  /* line-height y min-height van atados a propósito: el alto reservado es
+     exactamente un renglón, así el texto aparece sin empujar la tarjeta.
+     Si cambiás uno, cambiá el otro. */
+  line-height: 1.4;
+  min-height: 1.4em;
+}
+
+.pokemon__lista {
+  margin-top: 12px;
+}
+
+.pokemon__tarjeta {
+  min-width: 0;
+  padding: 10px;
+  background-color: var(--color-fondo);
+  border-radius: 10px;
+}
+
+.pokemon__tarjeta--aparece {
+  animation: aparecer 0.3s ease-out;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.pokemon__imagen {
+  width: 100%;
+  max-width: 130px;
+  /* Las ilustraciones son cuadradas: fijar la proporción evita que la
+     tarjeta cambie de alto al pasar de un pokémon a otro */
+  aspect-ratio: 1 / 1;
+  height: auto;
+  object-fit: contain;
+  margin-inline: auto;
+}
+
+.pokemon__nombre {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Texto que solo leen los lectores de pantalla */
+.solo-lectores {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.perfil__nombre {
+  font-size: clamp(1.4rem, 5.5vw, 2rem);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.datos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.dato {
+  min-width: 0;
+  padding: 12px 14px;
+  background-color: var(--color-fondo);
+  border-radius: 10px;
+}
+
+.dato__etiqueta {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-suave);
+}
+
+.dato__valor {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/* ---------- Bloques del perfil (habilidades y favoritos) ---------- */
+.bloque {
+  min-width: 0;
+  margin-top: 22px;
+}
+
+.bloque__titulo {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-suave);
+  margin-bottom: 10px;
+}
+
+/* Habilidades: chips que se acomodan solos y bajan de renglón */
+.habilidades {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.habilidad {
+  /* max-width evita que una habilidad de nombre largo desborde */
+  max-width: 100%;
+  padding: 6px 14px;
+  background-color: var(--color-acento-claro);
+  color: var(--color-acento);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Favoritos: dos listas que conviven en una grilla */
+.favoritos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+}
+
+.lista-favoritos {
+  display: grid;
+  gap: 8px;
+  counter-reset: favorito;
+}
+
+.favorito {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  min-width: 0;
+  padding: 10px 14px;
+  background-color: var(--color-fondo);
+  border-radius: 10px;
+}
+
+.favorito::before {
+  counter-increment: favorito;
+  content: counter(favorito);
+  flex: 0 0 auto;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-acento);
+}
+
+.favorito__titulo {
+  min-width: 0;
+  font-weight: 600;
+}
+
+.favorito__dato {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--color-suave);
+}
+
+/* ---------- Navegación de vuelta ---------- */
+.volver {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.volver:hover,
+.volver:focus {
+  text-decoration: underline;
+}
+
+/* ---------- Bitácora ---------- */
+.entradas {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.entrada {
+  min-width: 0;
+  padding: 18px;
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-left: 4px solid var(--color-acento);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+}
+
+.entrada__fecha {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-suave);
+}
+
+.entrada__titulo {
+  font-size: 1.1rem;
+  margin-block: 4px 6px;
+}
+
+/* ---------- Pie ---------- */
+.pie {
+  padding-block: 24px 32px;
+  color: var(--color-suave);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* =========================================================
+   Breakpoint 1 — 400px (celulares grandes)
+   ========================================================= */
+@media (min-width: 400px) {
+  :root {
+    --gutter: 20px;
+  }
+
+  .encabezado {
+    padding-block: 40px 44px;
+  }
+
+  .integrante__avatar {
+    width: 64px;
+    height: 64px;
+  }
+
+  .datos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
+   Breakpoint 2 — 900px (tablets / notebooks chicas)
+   ========================================================= */
+@media (min-width: 900px) {
+  :root {
+    --gutter: 32px;
+  }
+
+  .encabezado {
+    padding-block: 56px 60px;
+  }
+
+  .seccion {
+    padding-block: 44px;
+  }
+
+  .integrantes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .perfil {
+    grid-template-columns: 260px minmax(0, 1fr);
+    align-items: start;
+    gap: 28px;
+    padding: 28px;
+  }
+
+  .perfil__foto {
+    margin-inline: 0;
+  }
+
+  .datos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .entradas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .favoritos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px;
+  }
+}
+
+/* =========================================================
+   Breakpoint 3 — 1200px (escritorio)
+   ========================================================= */
+@media (min-width: 1200px) {
+  :root {
+    --ancho-maximo: 1180px;
+    --gutter: 40px;
+  }
+
+  .integrantes {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .perfil {
+    grid-template-columns: 320px minmax(0, 1fr);
+    gap: 36px;
+    padding: 36px;
+  }
+
+  .perfil__foto {
+    max-width: 320px;
+  }
+
+  .entradas {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Julieta Natalia Bravo — Equipo de Front end 33</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/estilos.css">
+  <script src="../js/pokemon.js" defer></script>
+</head>
+<body>
+
+  <header class="encabezado">
+    <div class="contenedor">
+      <a class="volver" href="../index.html">&#8592; Volvé al equipo</a>
+      <h1 class="encabezado__equipo">Perfil</h1>
+    </div>
+  </header>
+
+  <main>
+    <section class="seccion contenedor">
+      <article class="perfil">
+        <div class="perfil__columna">
+          <img
+            class="perfil__foto"
+            src="../imgs/Juli.jpg"
+            alt="Foto de Julieta Natalia Bravo">
+
+          <!-- data-pokemon: uno al azar entre la lista de abajo, o "aleatorio" para cualquiera -->
+          <section class="pokemon" data-pokemon="bulbasaur,chikorita,chansey,clefairy">
+            <p class="pokemon__intro">El pokémon favorito de este perfil es:</p>
+            <button class="pokebola" type="button" aria-expanded="false">
+              <span class="solo-lectores">Abrir la pokébola</span>
+            </button>
+            <p class="pokemon__estado" role="status"></p>
+            <ul class="pokemon__lista"></ul>
+          </section>
+        </div>
+
+        <div class="perfil__info">
+          <h2 class="perfil__nombre">Julieta Natalia Bravo</h2>
+
+          <ul class="datos">
+            <li class="dato">
+              <span class="dato__etiqueta">Nombre</span>
+              <span class="dato__valor">Julieta Natalia Bravo</span>
+            </li>
+            <li class="dato">
+              <span class="dato__etiqueta">Ciudad</span>
+              <span class="dato__valor">CABA</span>
+            </li>
+            <li class="dato">
+              <span class="dato__etiqueta">Edad</span>
+              <span class="dato__valor">27 años</span>
+            </li>
+          </ul>
+
+          <p>
+            Sigo en el camino del aprendizaje en la tecnicatura de desarrollo de software
+            mientras trabajo en una tienda relacionada a lo geek.
+          </p>
+
+          <section class="bloque">
+            <h3 class="bloque__titulo">Habilidades</h3>
+            <ul class="habilidades">
+              <li class="habilidad">Diseño</li>
+              <li class="habilidad">Planificación</li>
+              <li class="habilidad">Testing</li>
+              <li class="habilidad">Documentación</li>
+            </ul>
+          </section>
+
+          <div class="bloque favoritos">
+            <section>
+              <h3 class="bloque__titulo">Películas favoritas</h3>
+              <ul class="lista-favoritos">
+                <li class="favorito">
+                  <span class="favorito__titulo">
+                    Kill Bill: Volumen 1 y 2
+                    <span class="favorito__dato">Quentin Tarantino, 2003 y 2004</span>
+                  </span>
+                </li>
+                <li class="favorito">
+                  <span class="favorito__titulo">
+                    Orgullo y prejuicio
+                    <span class="favorito__dato">Joe Wright, 2005</span>
+                  </span>
+                </li>
+                <li class="favorito">
+                  <span class="favorito__titulo">
+                    Nueve reinas
+                    <span class="favorito__dato">Fabián Bielinsky, 2000</span>
+                  </span>
+                </li>
+              </ul>
+            </section>
+
+            <section>
+              <h3 class="bloque__titulo">Discos favoritos</h3>
+              <ul class="lista-favoritos">
+                <li class="favorito">
+                  <span class="favorito__titulo">
+                    Sin restricciones
+                    <span class="favorito__dato">Miranda!, 2004</span>
+                  </span>
+                </li>
+                <li class="favorito">
+                  <span class="favorito__titulo">
+                    La mosca y la sopa
+                    <span class="favorito__dato">Patricio Rey y sus Redonditos de Ricota, 1991</span>
+                  </span>
+                </li>
+                <li class="favorito">
+                  <span class="favorito__titulo">
+                    Please Please Me
+                    <span class="favorito__dato">The Beatles, 1963</span>
+                  </span>
+                </li>
+              </ul>
+            </section>
+          </div>
+
+          <a class="boton boton--secundario" href="../index.html">Volvé al listado</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="pie contenedor">
+    <p>© 2026 Equipo de Front end 33 — Hecho con HTML, CSS y JavaScript.</p>
+  </footer>
+
+</body>
+</html>
