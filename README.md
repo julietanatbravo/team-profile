@@ -2,7 +2,8 @@
 
 Página del equipo para la materia: reúne los perfiles de las cinco personas que lo
 integramos (foto, ciudad, edad, habilidades y gustos) más una bitácora del proyecto.
-HTML y CSS a mano, sin frameworks, y un poco de JavaScript para la [PokéAPI](https://pokeapi.co/).
+HTML y CSS a mano, sin frameworks, y JavaScript para la [PokéAPI](https://pokeapi.co/)
+y la [API de YGOPRODeck](https://ygoprodeck.com/api-guide/).
 
 🔗 **Sitio publicado:** https://team-profile-msftiu8bb-juli-brasv.vercel.app
 
@@ -10,9 +11,9 @@ HTML y CSS a mano, sin frameworks, y un poco de JavaScript para la [PokéAPI](ht
 
 | Nombre | Perfil | GitHub |
 |--------|--------|--------|
-| Julieta Natalia Bravo | [Ver](perfiles/integrante-1.html) | [@julietanatbravo](https://github.com/julietanatbravo) |
-| _Pendiente_ | [Ver](perfiles/integrante-2.html) | — |
-| _Pendiente_ | [Ver](perfiles/integrante-3.html) | — |
+| Jonatan Emanuel Uribio | [Ver](perfiles/integrante-1.html) | _Pendiente_ |
+| Julieta Natalia Bravo | [Ver](perfiles/integrante-2.html) | [@julietanatbravo](https://github.com/julietanatbravo) |
+| Gonzalo Moretti | [Ver](perfiles/integrante-3.html) | [@moregonza1975-rgb](https://github.com/moregonza1975-rgb) |
 | _Pendiente_ | [Ver](perfiles/integrante-4.html) | — |
 | _Pendiente_ | [Ver](perfiles/integrante-5.html) | — |
 
@@ -31,8 +32,13 @@ la página se abre como `file://`.
 index.html          Portada: equipo, descripción e integrantes
 bitacora.html       Entradas del proyecto
 css/estilos.css     Única hoja de estilos
-js/pokemon.js       Pokébola (PokéAPI)
+js/pokemon.js       Pokébola de Julieta (PokéAPI)
+js/kuriboh.js       Mazo interactivo de Jonatan (YGOPRODeck API)
+js/portada.js       Número 33 interactivo de la portada
+js/frases.js        Frases aleatorias de Gonzalo
 imgs/Juli.jpg       Foto de perfil
+imgs/Jonatan.jpeg   Foto de perfil
+imgs/Gonzalo.jpg    Foto pública del perfil de GitHub
 perfiles/           integrante-1.html … integrante-5.html
 ```
 
@@ -63,11 +69,14 @@ grillas pasan de 1 a 2 y 3 columnas, y desde los 900px el perfil pone la foto al
 
 ## JavaScript
 
-Cada perfil lleva su propia función interactiva. La de **Julieta es la pokébola**; los
-otros cuatro integrantes sumarán la suya, cada una en su archivo.
+Cada perfil lleva su propia función interactiva. La de **Jonatan es un mazo de cartas de
+Yugi**, la de **Julieta es la pokébola** y la de **Gonzalo muestra frases inspiradoras
+aleatorias**. Los otros dos integrantes sumarán la suya, cada una en su archivo.
 
-La **portada no tiene JavaScript**: la navegación son enlaces `<a>` y el efecto de las
-tarjetas es CSS.
+**El número 33 de la portada** ([`js/portada.js`](js/portada.js)) — está formado por capas
+translúcidas que reaccionan suavemente a la posición del puntero. Al tocarlo o hacer clic,
+los dos números se separan y vuelven a unirse. La interacción también funciona con teclado
+y desactiva el movimiento cuando el sistema tiene activada la opción de reducir animaciones.
 
 **La pokébola** ([`js/pokemon.js`](js/pokemon.js)) — debajo de la foto, al tocarla consulta
 la PokéAPI y muestra uno de los cuatro pokémon favoritos. Cuáles son se configura desde el
@@ -90,6 +99,16 @@ Hay un tiempo mínimo de 700 ms para que la animación se vea aunque el pokémon
 caché; la tarjeta no se recrea y los espacios están reservados, así nada salta; si falla
 la conexión avisa; y las animaciones se apagan con "reducir movimiento" activado.
 
+**El mazo de Yugi** ([`js/kuriboh.js`](js/kuriboh.js)) — al tocar el dorso elige al azar
+una carta icónica usada por Yugi, consulta la API pública de YGOPRODeck y la invoca con una
+animación de volteo. En los siguientes toques devuelve la carta al mazo, baraja y muestra
+otra sin repetir la anterior. La interacción informa su estado mediante un mensaje accesible
+y evita nuevas acciones mientras una carta se está cargando.
+
+**Las frases de Gonzalo** ([`js/frases.js`](js/frases.js)) — al tocar el botón elige una
+frase inspiradora al azar, evita repetir inmediatamente la anterior y anima suavemente su
+aparición. El mensaje se anuncia mediante una región accesible.
+
 **Capturas** — pendientes. Guardarlas en `docs/capturas/` y descomentar estas líneas:
 
 <!-- ![Portada](docs/capturas/portada.png) -->
@@ -99,13 +118,14 @@ la conexión avisa; y las animaciones se apagan con "reducir movimiento" activad
 
 ## Uso de IA
 
-**Herramienta:** Claude Code (extensión de VS Code), modelo **Claude Opus 5**, con plan pago.
+**Herramientas:** Claude Code (extensión de VS Code), modelo **Claude Opus 5**, y
+**OpenAI Codex**, con planes pagos.
 **Experiencia previa:** el equipo ya usa asistentes de IA para programar con regularidad.
 
-**Qué generó:** la estructura HTML de las páginas, la hoja de estilos completa con su
-sistema de variables y breakpoints, el JavaScript de la pokébola y este README. También
-redimensionó la foto de perfil (de 1,9 MB a 135 KB) y verificó contra la PokéAPI que los
-nombres existieran y que el rango de sorteo fuera correcto.
+**Qué generó:** Claude ayudó con la estructura HTML inicial, la hoja de estilos, la
+Pokébola y la primera versión del README. Codex ayudó a incorporar el perfil de Jonatan,
+reordenar los integrantes, documentar los cambios y desarrollar la carta interactiva de
+Kuriboh. También se verificaron enlaces, sintaxis y consultas a las APIs.
 
 **Imágenes:** no se usó ningún modelo generador de imágenes. La foto de perfil es real, y
 el avatar provisorio y la pokébola están dibujados con código (SVG y CSS).
@@ -120,14 +140,18 @@ el avatar provisorio y la pokébola están dibujados con código (SVG y CSS).
 - Dejamos la pokébola únicamente en el perfil de Julieta: la consigna pide que cada
   integrante desarrolle su propia función, así que no corresponde repetirla en los demás.
 - Corregimos la redacción de la bitácora y el orden de las entradas.
+- Elegimos una interacción distinta para Jonatan, basada en un mazo de cartas de Yugi,
+  para evitar repetir la función del perfil de Julieta.
+- Convertimos el número 33 en el elemento visual principal de la portada y le agregamos
+  profundidad, movimiento parallax e interacción por clic.
 
 ## Evolución
 
 **Para esta entrega**
 
-- [ ] Datos, fotos y GitHub de los integrantes 2 a 5
-- [ ] La función propia de cada uno de los otros cuatro perfiles
-- [ ] Entradas 2 y 3 de la bitácora
+- [ ] GitHub de Jonatan
+- [ ] Datos, fotos y GitHub de los integrantes 4 y 5
+- [ ] La función propia de los integrantes 4 y 5
 - [ ] Capturas de pantalla
 
 **Más adelante**

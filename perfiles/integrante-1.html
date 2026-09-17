@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Julieta Natalia Bravo — Equipo de Front end 33</title>
+  <title>Jonatan Emanuel Uribio — Equipo de Front end 33</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/estilos.css">
-  <script src="../js/pokemon.js" defer></script>
+  <script src="../js/kuriboh.js" defer></script>
 </head>
 <body>
 
@@ -25,50 +25,63 @@
         <div class="perfil__columna">
           <img
             class="perfil__foto"
-            src="../imgs/Juli.jpg"
-            alt="Foto de Julieta Natalia Bravo">
+            src="../imgs/Jonatan.jpeg"
+            alt="Foto de Jonatan Emanuel Uribio">
 
-          <!-- data-pokemon: uno al azar entre la lista de abajo, o "aleatorio" para cualquiera -->
-          <section class="pokemon" data-pokemon="bulbasaur,chikorita,chansey,clefairy">
-            <p class="pokemon__intro">El pokémon favorito de este perfil es:</p>
-            <button class="pokebola" type="button" aria-expanded="false">
-              <span class="solo-lectores">Abrir la pokébola</span>
+          <section class="kuriboh" aria-labelledby="kuriboh-titulo">
+            <h3 class="kuriboh__titulo" id="kuriboh-titulo">Mazo de Yugi</h3>
+            <button class="kuriboh__carta" type="button" aria-expanded="false" aria-describedby="kuriboh-estado">
+              <span class="kuriboh__cara kuriboh__dorso" aria-hidden="true">
+                <span>Yu-Gi-Oh!</span>
+              </span>
+              <span class="kuriboh__cara kuriboh__frente">
+                <img class="kuriboh__imagen" alt="Carta del mazo de Yugi" width="240" height="350">
+                <span class="kuriboh__alternativa" aria-hidden="true">Carta de Yugi</span>
+              </span>
             </button>
-            <p class="pokemon__estado" role="status"></p>
-            <ul class="pokemon__lista"></ul>
+            <p class="kuriboh__ayuda">Tocá la carta para invocar un monstruo distinto.</p>
+            <p class="kuriboh__estado" id="kuriboh-estado" role="status"></p>
           </section>
         </div>
 
         <div class="perfil__info">
-          <h2 class="perfil__nombre">Julieta Natalia Bravo</h2>
+          <h2 class="perfil__nombre">Jonatan Emanuel Uribio</h2>
 
           <ul class="datos">
             <li class="dato">
               <span class="dato__etiqueta">Nombre</span>
-              <span class="dato__valor">Julieta Natalia Bravo</span>
+              <span class="dato__valor">Jonatan Emanuel Uribio</span>
             </li>
             <li class="dato">
               <span class="dato__etiqueta">Ciudad</span>
-              <span class="dato__valor">CABA</span>
+              <span class="dato__valor">Yerba Buena, Tucumán</span>
             </li>
             <li class="dato">
               <span class="dato__etiqueta">Edad</span>
-              <span class="dato__valor">27 años</span>
+              <span class="dato__valor">29 años</span>
             </li>
           </ul>
 
           <p>
-            Sigo en el camino del aprendizaje en la tecnicatura de desarrollo de software
-            mientras trabajo en una tienda relacionada a lo geek.
+            Soy estudiante de la Tecnicatura en Programación y estoy construyendo mi camino
+            profesional dentro del mundo de los sistemas. Me interesa combinar el diseño UX/UI
+            con el desarrollo frontend para crear experiencias digitales claras, atractivas y
+            fáciles de usar. También cuento con conocimientos de backend y bases de datos.
+          </p>
+
+          <p>
+            Mi objetivo es seguir formándome hasta desempeñarme como analista de sistemas.
+            Considero esta tecnicatura una etapa fundamental de un proyecto personal que inicié
+            con entusiasmo y que quiero continuar ampliando con nuevos conocimientos y experiencia.
           </p>
 
           <section class="bloque">
             <h3 class="bloque__titulo">Habilidades</h3>
             <ul class="habilidades">
-              <li class="habilidad">Diseño</li>
-              <li class="habilidad">Planificación</li>
-              <li class="habilidad">Testing</li>
-              <li class="habilidad">Documentación</li>
+              <li class="habilidad">Diseño UX/UI</li>
+              <li class="habilidad">JavaScript</li>
+              <li class="habilidad">React</li>
+              <li class="habilidad">Backend con MongoDB</li>
             </ul>
           </section>
 
@@ -78,20 +91,20 @@
               <ul class="lista-favoritos">
                 <li class="favorito">
                   <span class="favorito__titulo">
-                    Kill Bill: Volumen 1 y 2
-                    <span class="favorito__dato">Quentin Tarantino, 2003 y 2004</span>
+                    Trilogía de El caballero oscuro
+                    <span class="favorito__dato">Christopher Nolan, 2005–2012</span>
                   </span>
                 </li>
                 <li class="favorito">
                   <span class="favorito__titulo">
-                    Orgullo y prejuicio
-                    <span class="favorito__dato">Joe Wright, 2005</span>
+                    The Avengers
+                    <span class="favorito__dato">Joss Whedon, 2012</span>
                   </span>
                 </li>
                 <li class="favorito">
                   <span class="favorito__titulo">
-                    Nueve reinas
-                    <span class="favorito__dato">Fabián Bielinsky, 2000</span>
+                    Matrix
+                    <span class="favorito__dato">Lana y Lilly Wachowski, 1999</span>
                   </span>
                 </li>
               </ul>
@@ -102,20 +115,20 @@
               <ul class="lista-favoritos">
                 <li class="favorito">
                   <span class="favorito__titulo">
-                    Sin restricciones
-                    <span class="favorito__dato">Miranda!, 2004</span>
+                    Sueño Stereo
+                    <span class="favorito__dato">Soda Stereo, 1995</span>
                   </span>
                 </li>
                 <li class="favorito">
                   <span class="favorito__titulo">
-                    La mosca y la sopa
-                    <span class="favorito__dato">Patricio Rey y sus Redonditos de Ricota, 1991</span>
+                    Thriller
+                    <span class="favorito__dato">Michael Jackson, 1982</span>
                   </span>
                 </li>
                 <li class="favorito">
                   <span class="favorito__titulo">
-                    Please Please Me
-                    <span class="favorito__dato">The Beatles, 1963</span>
+                    Interstellar: Original Motion Picture Soundtrack
+                    <span class="favorito__dato">Hans Zimmer, 2014</span>
                   </span>
                 </li>
               </ul>

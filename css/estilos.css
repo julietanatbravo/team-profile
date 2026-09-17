@@ -98,6 +98,86 @@ h3,
   padding-block: 32px 36px;
 }
 
+.encabezado--inicio {
+  position: relative;
+  isolation: isolate;
+  min-height: 390px;
+  overflow: hidden;
+  display: grid;
+  align-items: center;
+  background:
+    radial-gradient(circle at 80% 15%, rgb(255 255 255 / 10%), transparent 32%),
+    linear-gradient(135deg, #245b58, var(--color-acento));
+}
+
+.encabezado__contenido {
+  position: relative;
+  z-index: 2;
+}
+
+.numero33 {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  right: -34px;
+  display: flex;
+  width: min(72vw, 540px);
+  height: min(68vw, 430px);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  transform: translateY(-50%);
+  opacity: 0.72;
+}
+
+.numero33:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: -8px;
+  border-radius: 24px;
+}
+
+.numero33__digito {
+  position: relative;
+  flex: 1;
+  transition: transform 0.45s cubic-bezier(.2, .8, .2, 1);
+}
+
+.numero33__capa {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  font-family: var(--fuente-titulos);
+  font-size: clamp(13rem, 45vw, 26rem);
+  font-weight: 700;
+  line-height: 0.72;
+  translate: -50% -50%;
+  transition: transform 0.18s ease-out;
+  user-select: none;
+}
+
+.numero33__capa--fondo {
+  color: transparent;
+  -webkit-text-stroke: 2px rgb(255 255 255 / 18%);
+}
+
+.numero33__capa--medio {
+  color: rgb(255 255 255 / 8%);
+  -webkit-text-stroke: 1px rgb(255 255 255 / 24%);
+}
+
+.numero33__capa--frente {
+  color: rgb(255 255 255 / 9%);
+}
+
+.numero33--activo .numero33__digito--izquierdo {
+  transform: translateX(-12px) rotate(-4deg) scale(1.04);
+}
+
+.numero33--activo .numero33__digito--derecho {
+  transform: translateX(12px) rotate(4deg) scale(1.04);
+}
+
 .encabezado__equipo {
   font-size: clamp(1.6rem, 6vw, 2.6rem);
   line-height: 1.2;
@@ -206,6 +286,14 @@ h3,
   background-image: url("../imgs/Juli.jpg");
 }
 
+.integrante__avatar--jonatan {
+  background-image: url("../imgs/Jonatan.jpeg");
+}
+
+.integrante__avatar--gonzalo {
+  background-image: url("../imgs/Gonzalo.jpg");
+}
+
 .integrante__datos {
   min-width: 0;
 }
@@ -235,6 +323,153 @@ h3,
   object-fit: cover;
   border-radius: var(--radio);
   background-color: var(--color-acento-claro);
+}
+
+.perfil__foto--avatar {
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #2f6f6b, #183f52);
+  color: #fff;
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(4rem, 15vw, 7rem);
+  font-weight: 700;
+}
+
+/* ---------- Carta interactiva de Jonatan ---------- */
+.kuriboh {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.kuriboh__titulo {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+}
+
+.kuriboh__carta {
+  position: relative;
+  width: 180px;
+  aspect-ratio: 240 / 350;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+  perspective: 900px;
+}
+
+.kuriboh__cara {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 7px solid #20130d;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  box-shadow: 0 9px 22px rgb(31 41 51 / 24%);
+  transition: transform 0.65s ease;
+}
+
+.kuriboh__dorso {
+  background: repeating-radial-gradient(ellipse at center, #f29136 0 5px, #6b291f 8px 14px, #1d1110 17px 23px);
+  color: #fff;
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  text-shadow: 0 2px 4px #000;
+}
+
+.kuriboh__frente {
+  transform: rotateY(180deg);
+  background: #c79552;
+}
+
+.kuriboh__carta--invocada .kuriboh__dorso {
+  transform: rotateY(180deg);
+}
+
+.kuriboh__carta--invocada .kuriboh__frente {
+  transform: rotateY(360deg);
+}
+
+.kuriboh__imagen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.kuriboh__alternativa {
+  position: absolute;
+  font-family: "Outfit", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.kuriboh__imagen[src] + .kuriboh__alternativa {
+  display: none;
+}
+
+.kuriboh__ayuda,
+.kuriboh__estado {
+  min-height: 1.4em;
+  margin: 0.6rem 0 0;
+  color: var(--color-suave);
+  font-size: 0.9rem;
+}
+
+/* ---------- Frases de Gonzalo ---------- */
+.frases {
+  margin-top: 18px;
+  padding: 18px;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  background: linear-gradient(145deg, #ffffff, var(--color-acento-claro));
+  text-align: center;
+}
+
+.frases__titulo {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.frases__texto {
+  min-height: 3.2em;
+  margin: 0;
+  color: var(--color-acento);
+  font-style: italic;
+  font-weight: 600;
+}
+
+.frases__texto--visible {
+  animation: aparecer-frase 0.45s ease both;
+}
+
+.frases__boton {
+  border: 0;
+  background-color: var(--color-acento);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.frases__boton:hover,
+.frases__boton:focus-visible {
+  background-color: #245b58;
+}
+
+@keyframes aparecer-frase {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.kuriboh__estado {
+  color: var(--color-acento);
+  font-weight: 600;
 }
 
 /* Columna izquierda: foto + pokébola */
@@ -559,6 +794,10 @@ h3,
     padding-block: 40px 44px;
   }
 
+  .encabezado--inicio {
+    min-height: 410px;
+  }
+
   .integrante__avatar {
     width: 64px;
     height: 64px;
@@ -573,6 +812,15 @@ h3,
    Breakpoint 2 — 900px (tablets / notebooks chicas)
    ========================================================= */
 @media (min-width: 900px) {
+
+  .numero33 {
+    right: max(2vw, calc((100vw - var(--ancho-maximo)) / 2));
+    opacity: 0.9;
+  }
+
+  .encabezado--inicio .encabezado__descripcion {
+    max-width: 54ch;
+  }
   :root {
     --gutter: 32px;
   }
@@ -619,6 +867,10 @@ h3,
    Breakpoint 3 — 1200px (escritorio)
    ========================================================= */
 @media (min-width: 1200px) {
+
+  .encabezado--inicio {
+    min-height: 450px;
+  }
   :root {
     --ancho-maximo: 1180px;
     --gutter: 40px;
@@ -641,5 +893,16 @@ h3,
 
   .entradas {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .numero33__capa,
+  .numero33__digito {
+    transition: none;
+  }
+
+  .frases__texto--visible {
+    animation: none;
   }
 }

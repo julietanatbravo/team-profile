@@ -9,17 +9,32 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/portada.js" defer></script>
 </head>
 <body>
 
-  <header class="encabezado">
-    <div class="contenedor">
+  <header class="encabezado encabezado--inicio">
+    <button class="numero33" type="button" aria-label="Animar el número 33" aria-describedby="numero33-estado">
+      <span class="numero33__digito numero33__digito--izquierdo" aria-hidden="true">
+        <span class="numero33__capa numero33__capa--fondo">3</span>
+        <span class="numero33__capa numero33__capa--medio">3</span>
+        <span class="numero33__capa numero33__capa--frente">3</span>
+      </span>
+      <span class="numero33__digito numero33__digito--derecho" aria-hidden="true">
+        <span class="numero33__capa numero33__capa--fondo">3</span>
+        <span class="numero33__capa numero33__capa--medio">3</span>
+        <span class="numero33__capa numero33__capa--frente">3</span>
+      </span>
+    </button>
+    <p class="solo-lectores" id="numero33-estado" role="status"></p>
+
+    <div class="contenedor encabezado__contenido">
       <h1 class="encabezado__equipo">Equipo de Front end 33</h1>
       <p class="encabezado__descripcion">
         Esta página es la entrega que nos pidió el profesor: juntamos acá los perfiles de
         las cinco personas que formamos el equipo, cada una con sus habilidades y sus gustos.
-        Está hecha con HTML y CSS, más un poco de JavaScript para traer los pokémon
-        favoritos desde la PokéAPI. En la bitácora vas a encontrar cómo la fuimos armando.
+        Está hecha con HTML, CSS y JavaScript, con interacciones propias para la portada y
+        los perfiles. En la bitácora vas a encontrar cómo la fuimos armando.
       </p>
       <a class="boton" href="bitacora.html">Mirá la bitácora</a>
     </div>
@@ -33,6 +48,15 @@
       <ul class="integrantes">
         <li class="integrante">
           <a class="integrante__enlace" href="perfiles/integrante-1.html">
+            <span class="integrante__avatar integrante__avatar--jonatan" aria-hidden="true"></span>
+            <span class="integrante__datos">
+              <span class="integrante__nombre">Jonatan Emanuel Uribio</span>
+            </span>
+          </a>
+        </li>
+
+        <li class="integrante">
+          <a class="integrante__enlace" href="perfiles/integrante-2.html">
             <span class="integrante__avatar integrante__avatar--juli" aria-hidden="true"></span>
             <span class="integrante__datos">
               <span class="integrante__nombre">Julieta Natalia Bravo</span>
@@ -41,19 +65,10 @@
         </li>
 
         <li class="integrante">
-          <a class="integrante__enlace" href="perfiles/integrante-2.html">
-            <span class="integrante__avatar" aria-hidden="true"></span>
-            <span class="integrante__datos">
-              <span class="integrante__nombre">Nombre Integrante 2</span>
-            </span>
-          </a>
-        </li>
-
-        <li class="integrante">
           <a class="integrante__enlace" href="perfiles/integrante-3.html">
-            <span class="integrante__avatar" aria-hidden="true"></span>
+            <span class="integrante__avatar integrante__avatar--gonzalo" aria-hidden="true"></span>
             <span class="integrante__datos">
-              <span class="integrante__nombre">Nombre Integrante 3</span>
+              <span class="integrante__nombre">Gonzalo Moretti</span>
             </span>
           </a>
         </li>
