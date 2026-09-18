@@ -23,10 +23,12 @@
     <section class="seccion contenedor">
       <article class="perfil">
         <div class="perfil__columna">
-          <img
-            class="perfil__foto"
-            src="../imgs/Gonzalo.jpg"
-            alt="Foto de Gonzalo Moretti">
+          <!-- Avatar vectorial en lugar de la imagen de foto -->
+          <svg class="perfil__foto" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Avatar de Gonzalo Moretti">
+            <circle cx="50" cy="50" r="50" fill="#E2E8F0"/>
+            <circle cx="50" cy="38" r="20" fill="#94A3B8"/>
+            <path d="M50 62C33.4315 62 20 75.4315 20 92C20 96.4183 23.5817 100 28 100H72C76.4183 100 80 96.4183 80 92C80 75.4315 66.5685 62 50 62Z" fill="#94A3B8"/>
+          </svg>
 
           <section class="frases" aria-labelledby="frases-titulo">
             <h3 class="frases__titulo" id="frases-titulo">Una frase para hoy</h3>
