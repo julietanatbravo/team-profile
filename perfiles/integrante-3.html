@@ -1,137 +1,101 @@
+
 <!DOCTYPE html>
-<html lang="es-AR">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gonzalo Moretti — Equipo de Front end 33</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/estilos.css">
-  <script src="../js/frases.js" defer></script>
+    <meta charset="UTF-8">
+    <title>Tarjeta Virtual - Gonzalo Moretti</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+            margin: 0; 
+        }
+        .tarjeta { 
+            background: white; 
+            border-radius: 20px; 
+            padding: 30px; 
+            max-width: 400px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
+            text-align: center; 
+        }
+        .avatar { 
+            width: 120px; 
+            height: 120px; 
+            border-radius: 50%; 
+            object-fit: cover; 
+            margin: 0 auto 20px; 
+            display: block; 
+            border: 3px solid #667eea;
+        }
+        h1 { 
+            color: #667eea; 
+            margin: 10px 0; 
+        } 
+        .dato { 
+            margin: 8px 0; 
+        } 
+        h3 { 
+            color: #764ba2; 
+            margin-top: 20px; 
+        } 
+        ul { 
+            text-align: left; 
+            list-style: none; 
+            padding: 0; 
+        }
+        li {
+            margin: 5px 0;
+        }
+        button { 
+            background: #667eea; 
+            color: white; 
+            border: none; 
+            padding: 12px 25px; 
+            border-radius: 10px; 
+            cursor: pointer; 
+            margin-top: 15px; 
+        }
+        button:hover {
+            background: #556cd6;
+        }
+    </style>
 </head>
 <body>
-
-  <header class="encabezado">
-    <div class="contenedor">
-      <a class="volver" href="../index.html">&#8592; Volvé al equipo</a>
-      <h1 class="encabezado__equipo">Perfil</h1>
+    <div class="tarjeta">
+        <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=200&h=200&fit=crop" alt="Avatar de Gato" class="avatar">
+        <h1>Gonzalo Moretti</h1>
+        <div class="dato"><b>Ciudad:</b> Godoy, Santa Fe</div>
+        <div class="dato"><b>Edad:</b> 50 años</div>
+        <div class="dato"><b>Nacimiento:</b> 08/11/1975</div>
+        
+        <h3>Mis 4 Habilidades</h3>
+        <ul>
+            <li>Resolución de problemas</li>
+            <li>Aprender cosas nuevas rápido</li>
+            <li>Buena memoria para los nombres</li>
+            <li>Paciencia para enseñar</li>
+        </ul>
+        
+        <h3>3 Películas Favoritas</h3>
+        <ul>
+            <li>El Padrino</li>
+            <li>Volver al Futuro</li>
+            <li>Forrest Gump</li>
+        </ul>
+        
+        <h3>3 Discos Favoritos</h3>
+        <ul>
+            <li>Soda Stereo - Canción Animal</li>
+            <li>Los Redondos - Oktubre</li>
+            <li>Queen - A Night at the Opera</li>
+        </ul>
+        
+        <button onclick="document.getElementById('frase').innerText = ['El que persevera, alcanza.','Nunca es tarde para aprender.','Cada día es una nueva oportunidad.'][Math.floor(Math.random()*3)]">Tocame para una frase</button>
+        <div id="frase" style="margin-top:15px; font-style:italic;"></div>
     </div>
-  </header>
-
-  <main>
-    <section class="seccion contenedor">
-      <article class="perfil">
-        <div class="perfil__columna">
-          <!-- Avatar vectorial en lugar de la imagen de foto -->
-          <svg class="perfil__foto" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Avatar de Gonzalo Moretti">
-            <circle cx="50" cy="50" r="50" fill="#E2E8F0"/>
-            <circle cx="50" cy="38" r="20" fill="#94A3B8"/>
-            <path d="M50 62C33.4315 62 20 75.4315 20 92C20 96.4183 23.5817 100 28 100H72C76.4183 100 80 96.4183 80 92C80 75.4315 66.5685 62 50 62Z" fill="#94A3B8"/>
-          </svg>
-
-          <section class="frases" aria-labelledby="frases-titulo">
-            <h3 class="frases__titulo" id="frases-titulo">Una frase para hoy</h3>
-            <blockquote class="frases__texto" aria-live="polite">
-              Tocá el botón para descubrir una frase.
-            </blockquote>
-            <button class="boton frases__boton" type="button">Inspirarme</button>
-          </section>
-        </div>
-
-        <div class="perfil__info">
-          <h2 class="perfil__nombre">Gonzalo Moretti</h2>
-
-          <ul class="datos">
-            <li class="dato">
-              <span class="dato__etiqueta">Nombre</span>
-              <span class="dato__valor">Gonzalo Moretti</span>
-            </li>
-            <li class="dato">
-              <span class="dato__etiqueta">Ciudad</span>
-              <span class="dato__valor">Godoy, Santa Fe</span>
-            </li>
-            <li class="dato">
-              <span class="dato__etiqueta">Edad</span>
-              <span class="dato__valor">50 años</span>
-            </li>
-          </ul>
-
-          <p>
-            Me interesa resolver problemas y aprender continuamente. Disfruto incorporar
-            conocimientos nuevos, recordar los detalles que hacen la diferencia y compartir
-            lo aprendido con paciencia para ayudar a otras personas.
-          </p>
-
-          <section class="bloque">
-            <h3 class="bloque__titulo">Habilidades</h3>
-            <ul class="habilidades">
-              <li class="habilidad">Resolución de problemas</li>
-              <li class="habilidad">Aprendizaje rápido</li>
-              <li class="habilidad">Memoria para los nombres</li>
-              <li class="habilidad">Paciencia para enseñar</li>
-            </ul>
-          </section>
-
-          <div class="bloque favoritos">
-            <section>
-              <h3 class="bloque__titulo">Películas favoritas</h3>
-              <ul class="lista-favoritos">
-                <li class="favorito">
-                  <span class="favorito__titulo">
-                    El padrino
-                    <span class="favorito__dato">Francis Ford Coppola, 1972</span>
-                  </span>
-                </li>
-                <li class="favorito">
-                  <span class="favorito__titulo">
-                    Volver al futuro
-                    <span class="favorito__dato">Robert Zemeckis, 1985</span>
-                  </span>
-                </li>
-                <li class="favorito">
-                  <span class="favorito__titulo">
-                    Forrest Gump
-                    <span class="favorito__dato">Robert Zemeckis, 1994</span>
-                  </span>
-                </li>
-              </ul>
-            </section>
-
-            <section>
-              <h3 class="bloque__titulo">Discos favoritos</h3>
-              <ul class="lista-favoritos">
-                <li class="favorito">
-                  <span class="favorito__titulo">
-                    Canción animal
-                    <span class="favorito__dato">Soda Stereo, 1990</span>
-                  </span>
-                </li>
-                <li class="favorito">
-                  <span class="favorito__titulo">
-                    Oktubre
-                    <span class="favorito__dato">Patricio Rey y sus Redonditos de Ricota, 1986</span>
-                  </span>
-                </li>
-                <li class="favorito">
-                  <span class="favorito__titulo">
-                    A Night at the Opera
-                    <span class="favorito__dato">Queen, 1975</span>
-                  </span>
-                </li>
-              </ul>
-            </section>
-          </div>
-
-          <a class="boton boton--secundario" href="../index.html">Volvé al listado</a>
-        </div>
-      </article>
-    </section>
-  </main>
-
-  <footer class="pie contenedor">
-    <p>© 2026 Equipo de Front end 33 — Hecho con HTML, CSS y JavaScript.</p>
-  </footer>
-
 </body>
 </html>
