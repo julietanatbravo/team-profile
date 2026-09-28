@@ -14,7 +14,7 @@ y la [API de YGOPRODeck](https://ygoprodeck.com/api-guide/).
 | Jonatan Emanuel Uribio | [Ver](perfiles/integrante-1.html) | _Pendiente_ |
 | Julieta Natalia Bravo | [Ver](perfiles/integrante-2.html) | [@julietanatbravo](https://github.com/julietanatbravo) |
 | Gonzalo Moretti | [Ver](perfiles/integrante-3.html) | [@moregonza1975-rgb](https://github.com/moregonza1975-rgb) |
-| _Pendiente_ | [Ver](perfiles/integrante-4.html) | — |
+| Gabriel ZarZa | [Ver](perfiles/integrante-4.html) | @gabrielzarza741](https://github.com/gabrielzarza741-wed) |
 | _Pendiente_ | [Ver](perfiles/integrante-5.html) | — |
 
 ## Tecnologías
