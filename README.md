@@ -11,7 +11,7 @@ y la [API de YGOPRODeck](https://ygoprodeck.com/api-guide/).
 
 | Nombre | Perfil | GitHub |
 |--------|--------|--------|
-| Jonatan Emanuel Uribio | [Ver](perfiles/integrante-1.html) | _Pendiente_ |
+| Jonatan Emanuel Uribio | [Ver](perfiles/integrante-1.html) | @JonatanUribio7749 |
 | Julieta Natalia Bravo | [Ver](perfiles/integrante-2.html) | [@julietanatbravo](https://github.com/julietanatbravo) |
 | Gonzalo Moretti | [Ver](perfiles/integrante-3.html) | [@moregonza1975-rgb](https://github.com/moregonza1975-rgb) |
 | Gabriel ZarZa | [Ver](perfiles/integrante-4.html) | @gabrielzarza741 |
