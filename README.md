@@ -5,7 +5,7 @@ integramos (foto, ciudad, edad, habilidades y gustos) más una bitácora del pro
 HTML y CSS a mano, sin frameworks, y JavaScript para la [PokéAPI](https://pokeapi.co/)
 y la [API de YGOPRODeck](https://ygoprodeck.com/api-guide/).
 
-🔗 **Sitio publicado:** https://team-profile-msftiu8bb-juli-brasv.vercel.app
+🔗 **Sitio publicado:** perfil-de-equipo-uno.vercel.app
 
 ## Integrantes
 
